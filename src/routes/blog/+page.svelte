@@ -11,6 +11,18 @@
   });
 </script>
 
+<form class="w-1/2 mx-auto" method="POST">
+  <label class="block text-center">
+    Title
+    <input class="w-1/2 mx-auto" name="title" />
+  </label>
+
+  <label class="block text-center">
+    Description
+    <input class="w-1/2 mx-auto" name="description" />
+  </label>
+</form>
+
 <div class="w-1/2 text-center text-sky-500 mx-auto">
   {#each data.blogs as blog}
     <RouterLink to="/blog/${blog.id}">
