@@ -13,12 +13,20 @@
 
 <div class="w-1/2 text-center text-sky-500 mx-auto">
   {#each data.blogs as blog}
-    <RouterLink to={`/blog/${blog.id}`}>
+    <RouterLink to="/blog/${blog.id}">
       <div
-        class="w-1/2 mx-auto border-slate-500 border rounded-lg p-2 hover:bg-slate-600 hover:cursor-pointer"
+        class="w-1/2 mx-auto border-slate-500 border rounded-lg p-2 bg-slate-700 hover:bg-slate-600 hover:cursor-pointer"
       >
         {blog.title}
       </div>
     </RouterLink>
   {/each}
+
+  <RouterLink to="/blog/-1">
+    <div
+      class="w-1/2 mx-auto border-slate-500 border rounded-lg p-2 bg-slate-700 hover:bg-slate-600 hover:cursor-pointer"
+    >
+      This blog doesn't exist
+    </div>
+  </RouterLink>
 </div>

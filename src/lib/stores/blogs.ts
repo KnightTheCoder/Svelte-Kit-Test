@@ -11,12 +11,12 @@ const createBlog = (title: string, description: string) => {
     ? getBlogs().reduce((prev: Blog, cur: Blog) => (prev.id > cur.id ? prev : cur)).id + 1
     : 1;
 
-  blogs.update((arr: Blog[]) => [...arr, { id, title, description } satisfies Blog]);
+  blogs.update((arr: Blog[]) => [...arr, { id, title, description }]);
 };
 const deleteBlog = (id: number) =>
   blogs.update((arr: Blog[]) => arr.filter((it: Blog) => it.id != id));
 
-createBlog('Random thingy', 'This is why I hate life');
-createBlog('Another random thingy', 'This is why I hate life');
+createBlog('Random thingy', 'This is why I hate my life');
+createBlog('Another random thingy', 'This is also why I hate my life');
 
 export { getBlogs, getBlog, createBlog, deleteBlog };
