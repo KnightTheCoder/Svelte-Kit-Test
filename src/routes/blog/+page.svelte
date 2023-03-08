@@ -11,16 +11,24 @@
   });
 </script>
 
-<form class="w-1/2 mx-auto" method="POST">
-  <label class="block text-center">
-    Title
-    <input class="w-1/2 mx-auto" name="title" />
-  </label>
+<form class="w-1/2 mx-auto text-center" method="POST">
+  <div class="w-1/2 mx-auto">
+    <label for="title">
+      Title
+    </label>
+    <input class="w-full bg-slate-600 text-sky-500 rounded-lg p-2" name="title" />
+  </div>
 
-  <label class="block text-center">
-    Description
-    <input class="w-1/2 mx-auto" name="description" />
-  </label>
+  <div class="w-1/2 mx-auto">
+    <label for="description">
+      Description
+    </label>
+    <input class="w-full bg-slate-600 text-sky-500 rounded-lg p-2" name="description" />
+  </div>
+
+  <button class="rounded-lg bg-slate-600 hover:bg-slate-500 w-1/2 p-2 my-4">
+    Create
+  </button>
 </form>
 
 <div class="w-1/2 text-center text-sky-500 mx-auto">
