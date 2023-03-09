@@ -1,5 +1,5 @@
 import { error, type Actions } from '@sveltejs/kit';
-import { createBlog } from '$lib/functions/blogs';
+import { createPost } from '$lib/functions/posts';
 
 export const actions = {
   default: async ({ request }) => {
@@ -10,6 +10,6 @@ export const actions = {
     if (title == undefined || description == undefined || [title, description].includes(''))
       throw error(400, 'Title or description is empty');
 
-    await createBlog(title, description);
+    await createPost(title, description);
   }
 } satisfies Actions;

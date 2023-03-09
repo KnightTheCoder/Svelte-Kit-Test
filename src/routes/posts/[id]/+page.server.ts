@@ -1,4 +1,4 @@
-import { deleteBlog } from '$lib/functions/blogs';
+import { deletePost } from '$lib/functions/posts';
 import { error, redirect, type Actions } from '@sveltejs/kit';
 export const actions = {
   delete: async ({ request }) => {
@@ -7,6 +7,6 @@ export const actions = {
 
     if (id == undefined || isNaN(Number(id))) throw error(400, "Id isn't a number!");
 
-    if (await deleteBlog(id)) throw redirect(303, '/blogs');
+    if (await deletePost(id)) throw redirect(303, '/posts');
   }
 } satisfies Actions;

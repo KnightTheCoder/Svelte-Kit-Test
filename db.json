@@ -1,14 +1,9 @@
 {
-  "blogs": [
+  "posts": [
     {
       "id": 1,
-      "title": "Gamer awards",
-      "description": "The biggest gamers have received awards this weekend."
-    },
-    {
-      "id": 2,
-      "title": "Cool horses",
-      "description": "Cool horses have arrived in the town"
+      "title": "A man has fallen in the river in lego city",
+      "description": "Build the rescue helicopter!"
     }
   ]
 }
