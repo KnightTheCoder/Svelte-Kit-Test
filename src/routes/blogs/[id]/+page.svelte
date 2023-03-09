@@ -8,6 +8,8 @@
   onMount(() => {
     setTitle(data.blog.title);
   });
+
+  $: setTitle(data.blog.title);
 </script>
 
 <div class="text-center">
