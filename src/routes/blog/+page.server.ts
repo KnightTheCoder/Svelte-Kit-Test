@@ -1,8 +1,9 @@
-import { createBlog } from '$lib/stores/blogs';
-import { error } from '@sveltejs/kit';
+import { getBlogs, createBlog } from '$lib/stores/blogs';
+import { error, type Action } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
 export const actions = {
-  default: async ({ cookies, request }) => {
+  default: async ({ request }) => {
     const data = await request.formData();
     const title = data.get('title')?.toString();
     const description = data.get('description')?.toString();
@@ -11,4 +12,12 @@ export const actions = {
 
     createBlog(title, description);
   }
+};
+
+export const load: PageServerLoad = ({ params }) => {
+  let blogs = getBlogs();
+
+  return {
+    blogs
+  };
 };
