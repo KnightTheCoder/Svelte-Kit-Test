@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { createBlog } from '$lib/stores/blogs';
   import { onMount } from 'svelte';
   import { setTitle } from '$lib/functions/title';
 
   onMount(() => {
     setTitle('Home');
-    createBlog('Random thingy', 'This is why I hate my life');
-    createBlog('Another random thingy', 'This is also why I hate my life');
   });
 </script>
 

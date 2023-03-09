@@ -6,7 +6,7 @@
 <nav class="bg-slate-700 p-2">
   <RouterLink to="/">Home</RouterLink>
   <RouterLink to="/about">About</RouterLink>
-  <RouterLink to="/blog">Blogs</RouterLink>
+  <RouterLink to="/blogs">Blogs</RouterLink>
 </nav>
 
 <div class="mt-2">
