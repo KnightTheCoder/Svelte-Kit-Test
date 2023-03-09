@@ -16,6 +16,7 @@ const createBlog = (title: string, description: string) => {
 const deleteBlog = (id: number) =>
   blogs.update((arr: Blog[]) => arr.filter((it: Blog) => it.id != id));
 
+blogs.set([]);
 createBlog('Random thingy', 'This is why I hate my life');
 createBlog('Another random thingy', 'This is also why I hate my life');
 
