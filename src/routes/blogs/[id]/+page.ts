@@ -1,10 +1,9 @@
 import type { Blog } from '$lib/types/blog';
-import { axiosInstance } from '$lib/functions/axios';
+import { getBlog } from '$lib/functions/blogs';
 import type { PageLoad } from './$types';
 
 export const load = (async ({ params }) => {
-  const resp = await axiosInstance.get(`/blogs/${params.id}`);
-  const blog: Blog = (await resp.data) satisfies Blog;
+  const blog: Blog = await getBlog(params.id);
 
   return {
     blog

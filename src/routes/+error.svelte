@@ -1,5 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { setTitle } from '$lib/functions/title';
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    setTitle(`${$page.status} ${$page.error?.message}`);
+  });
 </script>
 
 <div class="text-center">

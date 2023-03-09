@@ -17,4 +17,9 @@
     {data.blog.title}
   </h1>
   <p>{data.blog.description}</p>
+
+  <form method="post" action="?/delete">
+    <input type="hidden" name="id" value={data.blog.id} />
+    <button class="px-12 py-2 my-2 bg-red-700 hover:bg-red-500 rounded-lg"> Delete </button>
+  </form>
 </div>
