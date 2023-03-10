@@ -11,7 +11,7 @@
   <h1 class="text-sky-500 text-3xl font-bold">Latest posts</h1>
   {#each data.posts as post}
     <RouterLink to="/posts/{post.id}">
-      <div class="p-2 rounded-lg bg-slate-700">
+      <div class="p-2 rounded-lg bg-slate-700 overflow-x-hidden">
         <h2 class="text-xl mb-2">{post.title}</h2>
         <p>{post.description}</p>
       </div>

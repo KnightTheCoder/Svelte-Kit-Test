@@ -34,9 +34,18 @@ const createPost = async (title: string, description: string) => {
   return resp.status == 201;
 };
 
+const editPost = async (id: number | string, title: string, description: string) => {
+  const post = await getPost(id);
+
+  if (!post) throw Error("Post doesn't exist!");
+
+  const resp = await postInstance.put(`/${id}`, { title, description });
+  return resp.status == 200;
+};
+
 const deletePost = async (id: number | string) => {
   const resp = await postInstance.delete(`/${id}`);
   return resp.status == 200;
 };
 
-export { getPosts, getPost, createPost, deletePost };
+export { getPosts, getPost, createPost, editPost, deletePost };

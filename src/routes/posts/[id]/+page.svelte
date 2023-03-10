@@ -18,6 +18,11 @@
   </h1>
   <p>{data.post.description}</p>
 
+  <form method="post" action="?/startEdit">
+    <input type="hidden" name="id" value={data.post.id} />
+    <button class="px-12 py-2 my-2 bg-sky-700 hover:bg-sky-500 rounded-lg"> Edit </button>
+  </form>
+
   <form method="post" action="?/delete">
     <input type="hidden" name="id" value={data.post.id} />
     <button class="px-12 py-2 my-2 bg-red-700 hover:bg-red-500 rounded-lg"> Delete </button>
