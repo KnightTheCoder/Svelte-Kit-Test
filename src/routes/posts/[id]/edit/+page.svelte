@@ -20,7 +20,7 @@
     <label class="block text-lg" for="title"> Description </label>
     <input
       class="p-2 my-2 rounded-lg bg-slate-500 focus:bg-slate-400"
-      name="title"
+      name="description"
       value={data.post.description}
     />
 

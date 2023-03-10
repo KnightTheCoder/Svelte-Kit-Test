@@ -16,6 +16,6 @@ export const actions = {
         description
       });
 
-    if (await editPost(id, title, description)) throw redirect(303, `/posts/${id}`);
+    if (await editPost(id, title, description)) throw redirect(303, '/posts');
   }
 } satisfies Actions;
