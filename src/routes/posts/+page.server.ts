@@ -1,4 +1,4 @@
-import { error, type Actions } from '@sveltejs/kit';
+import { fail, type Actions } from '@sveltejs/kit';
 import { createPost } from '$lib/functions/posts';
 
 export const actions = {
@@ -8,7 +8,9 @@ export const actions = {
     const description = data.get('description')?.toString();
 
     if (title == undefined || description == undefined || [title, description].includes(''))
-      throw error(400, 'Title or description is empty');
+      return fail(422, {
+        error: 'Title or description is empty'
+      });
 
     await createPost(title, description);
   }
