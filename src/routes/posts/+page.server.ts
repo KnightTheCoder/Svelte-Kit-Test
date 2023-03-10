@@ -9,9 +9,22 @@ export const actions = {
 
     if (title == undefined || description == undefined || [title, description].includes(''))
       return fail(422, {
-        error: 'Title or description is empty'
+        error: 'Title or description is empty',
+        title,
+        description
       });
 
-    await createPost(title, description);
+    try {
+      await createPost(title, description);
+    } catch (error) {
+      let message = 'Unknown error!';
+      if (error instanceof Error) message = error.message;
+
+      return fail(422, {
+        error: message,
+        title,
+        description
+      });
+    }
   }
 } satisfies Actions;

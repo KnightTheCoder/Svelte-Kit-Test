@@ -26,6 +26,10 @@ const createPost = async (title: string, description: string) => {
     id = posts.reduce((prev, cur) => (prev.id > cur.id ? prev : cur)).id + 1;
   }
 
+  if (posts.some((x) => x.title == title)) {
+    throw Error('This post already exists!');
+  }
+
   const resp = await postInstance.post('', { id, title, description });
   return resp.status == 201;
 };
