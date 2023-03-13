@@ -2,6 +2,7 @@
   import type { ActionData } from './$types';
   import { setTitle } from '$lib/functions/title';
   import { onMount } from 'svelte';
+  import { enhance } from '$app/forms';
 
   export let form: ActionData;
 
@@ -12,7 +13,7 @@
 
 <div class="text-center">
   <h1 class="text-sky-500 text-3xl font-bold mb-4">Create a new post</h1>
-  <form method="post">
+  <form method="post" use:enhance>
     <p class="text-center text-red-700">{form?.error || ''}</p>
     <label class="block text-lg" for="title"> Title </label>
     <input

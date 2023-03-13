@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { enhance } from '$app/forms';
   import type { ActionData, PageData } from './$types';
 
   export let data: PageData;
@@ -6,7 +7,7 @@
 </script>
 
 <div class="w-fit mx-auto text-center">
-  <form method="post" action="?/edit">
+  <form method="post" action="?/edit" use:enhance>
     <p class="text-red-700">{form?.error || ''}</p>
     <input type="hidden" name="id" value={data.post.id} />
 
