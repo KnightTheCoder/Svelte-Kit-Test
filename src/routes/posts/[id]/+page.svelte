@@ -17,7 +17,7 @@
   <h1 class="text-sky-500 font-bold text-3xl">
     {data.post.title}
   </h1>
-  <p>{data.post.description}</p>
+  <p>{@html data.post.description}</p>
 
   <form method="post" action="?/startEdit" use:enhance>
     <input type="hidden" name="id" value={data.post.id} />

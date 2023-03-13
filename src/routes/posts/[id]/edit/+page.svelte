@@ -19,7 +19,7 @@
     />
 
     <label class="block text-lg" for="title"> Description </label>
-    <input
+    <textarea
       class="p-2 my-2 rounded-lg bg-slate-500 focus:bg-slate-400"
       name="description"
       value={data.post.description}
