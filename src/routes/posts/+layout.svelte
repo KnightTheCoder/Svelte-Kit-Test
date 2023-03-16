@@ -14,7 +14,7 @@
     <RouterLink to="/posts/{post.id}">
       <div class="p-2 rounded-lg bg-slate-700 overflow-x-hidden" transition:fly>
         <h2 class="text-xl mb-2">{post.title}</h2>
-        <p>{post.description}</p>
+        <p>{@html post.description}</p>
       </div>
     </RouterLink>
   {:else}
